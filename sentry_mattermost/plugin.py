@@ -19,7 +19,7 @@
 # THE SOFTWARE.
 
 import json
-import urllib3
+import urllib2
 import operator
 
 from django import forms
@@ -87,9 +87,10 @@ class PayloadFactory:
 
 def request(url, payload):
     data = "payload=" + json.dumps(payload)
-    req = urllib3.Request(url, data)
-    response = urllib3.urlopen(req)
-    return response.read()
+    req = urllib2.Request(url, data)
+    response = urllib2.urlopen(req)
+    # return response.read()
+    return "################"
 
 
 class MattermostOptionsForm(notify.NotificationConfigurationForm):
