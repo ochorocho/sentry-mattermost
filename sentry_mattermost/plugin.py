@@ -90,7 +90,7 @@ def request(url, payload):
     req = urllib2.Request(url, data)
     response = urllib2.urlopen(req)
     # return response.read()
-    return "################"
+    return data
 
 
 class MattermostOptionsForm(notify.NotificationConfigurationForm):
